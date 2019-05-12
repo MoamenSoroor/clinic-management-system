@@ -1,2 +1,2 @@
 # Children-clinic
-Children clinic Management in Arabic language
+Children clinic Management System in Arabic language
