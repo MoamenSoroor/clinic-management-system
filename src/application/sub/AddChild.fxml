@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="container" fitToHeight="true" fitToWidth="true" prefHeight="690.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sub.AddChildController">
+   <content>
+      <AnchorPane>
+         <children>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="658.0" prefWidth="859.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="480.0" prefWidth="305.0" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="417.0" text="المعلومات الاساسية" />
+                        <Separator halignment="LEFT" prefWidth="200.0" VBox.vgrow="NEVER" />
+                        <GridPane alignment="CENTER" hgap="5.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="206.0" prefWidth="471.0" vgap="5.0" VBox.vgrow="ALWAYS">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="507.0" minWidth="10.0" prefWidth="52.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="507.0" minWidth="10.0" prefWidth="304.0" />
+                            <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="224.0" minWidth="10.0" prefWidth="95.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <TextField fx:id="childName" alignment="CENTER_RIGHT" promptText="ادخل الاسم" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+                              <Label text="اسم الحالة" GridPane.columnIndex="2" />
+                              <Label layoutX="285.0" layoutY="55.0" text="تاريخ الميلاد" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label layoutX="285.0" layoutY="142.0" text="النوع" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label layoutX="285.0" layoutY="142.0" text="التشخيص" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="ChildBirth" editable="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="537.0" promptText="تاريخ الميلاد" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                              <TextField fx:id="status" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="32.0" promptText="التشخيص" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <HBox alignment="CENTER" prefHeight="70.0" prefWidth="291.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <children>
+                                    <RadioButton fx:id="female" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" text="أنثى">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="maleFemale" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="male" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" selected="true" text="ذكر" toggleGroup="$maleFemale" />
+                                 </children>
+                              </HBox>
+                              <ImageView fx:id="childNameError" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="birthDayError" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="statusError" fitHeight="32.0" fitWidth="32.0" layoutX="31.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                        <Separator halignment="LEFT" prefWidth="200.0" />
+                        <HBox prefHeight="45.0" prefWidth="494.0">
+                           <children>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <CheckBox fx:id="oldPartnerCheck" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onOldPartnerCheck" prefHeight="17.0" prefWidth="175.0" text="اضافة مرافق اولى موجود سابقا" />
+                                    <HBox alignment="CENTER" spacing="10.0">
+                                       <children>
+                                          <ComboBox fx:id="selectOldPartner" editable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="45.0" prefWidth="719.0">
+                                             <padding>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </padding>
+                                          </ComboBox>
+                                          <ImageView fx:id="selectOldPartnerError" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@../icons/cancel.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Separator halignment="LEFT" layoutX="20.0" layoutY="187.0" prefWidth="200.0" />
+                        <HBox layoutX="20.0" layoutY="190.0" prefHeight="45.0" prefWidth="494.0">
+                           <children>
+                              <VBox spacing="5.0">
+                                 <children>
+                                    <CheckBox fx:id="oldPartnerCheck1" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onOldPartnerCheck1" prefHeight="17.0" prefWidth="182.0" text="اضافة مرافق ثانوى موجود سابقا" />
+                                    <HBox alignment="CENTER" spacing="10.0">
+                                       <children>
+                                          <ComboBox fx:id="selectOldPartner1" editable="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="45.0" prefWidth="719.0">
+                                             <padding>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </padding>
+                                          </ComboBox>
+                                          <ImageView fx:id="selectOldPartnerError1" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@../icons/cancel.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Separator halignment="LEFT" prefWidth="200.0" VBox.vgrow="NEVER" />
+                        <HBox nodeOrientation="RIGHT_TO_LEFT">
+                           <children>
+                              <CheckBox fx:id="cancelPartner1" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onCancelPartner1" prefHeight="17.0" prefWidth="208.0" text="الغاء المرافق الاولى" />
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="417.0" text="معلومات المرافق الاولى" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Separator halignment="LEFT" prefWidth="200.0" VBox.vgrow="NEVER" />
+                        <GridPane alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="244.0" prefWidth="471.0" vgap="10.0" VBox.vgrow="ALWAYS">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="322.0" minWidth="10.0" prefWidth="52.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="353.0" minWidth="10.0" prefWidth="296.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="120.0" minWidth="10.0" prefWidth="118.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="part1Name" alignment="CENTER_RIGHT" promptText="اسم المرافق الاول" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+                              <Label text="اسم المرافق الاول" GridPane.columnIndex="2" />
+                              <Label layoutX="285.0" layoutY="142.0" text="رقم الهاتف الاولى" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <TextField fx:id="part1phone1" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="103.0" promptText="رقم الهاتف الاولى" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label layoutX="272.0" layoutY="131.0" text="رقم الهاتف الثانوى" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <TextField fx:id="part1Phone2" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="127.0" promptText="رقم الهاتف الثانوى" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ImageView fx:id="part1Phone2Error" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="3">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="part1Phone1Error" fitHeight="32.0" fitWidth="32.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="part1NameError" fitHeight="32.0" fitWidth="32.0" layoutX="24.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="406.0" layoutY="58.0" text="رقم الهاتف الارضى" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="part1groundPhone" alignment="CENTER_RIGHT" layoutX="67.0" layoutY="54.0" promptText="رقم الهاتف الارضى" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ImageView fx:id="part1GroundPhoneError" fitHeight="32.0" fitWidth="32.0" layoutX="28.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="382.0" layoutY="128.0" text="العنوان" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <TextField fx:id="part1Address" alignment="CENTER_RIGHT" layoutX="67.0" layoutY="124.0" promptText="العنوان" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ImageView fx:id="part1AddressError" fitHeight="32.0" fitWidth="32.0" layoutX="28.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="4">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                        <Separator halignment="LEFT" prefWidth="200.0" />
+                        <HBox layoutX="20.0" layoutY="212.0" nodeOrientation="RIGHT_TO_LEFT">
+                           <children>
+                              <CheckBox fx:id="cancelPartner2" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onCancelPartner2" prefHeight="17.0" prefWidth="137.0" text="الغاء المرافق الثانوى" />
+                              <Label alignment="CENTER" prefHeight="17.0" prefWidth="331.0" text="معلومات المرافق الثانوى" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Separator halignment="LEFT" prefWidth="200.0" />
+                        <GridPane alignment="CENTER" hgap="5.0" layoutX="20.0" layoutY="294.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="167.0" prefWidth="471.0" vgap="10.0" VBox.vgrow="ALWAYS">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="322.0" minWidth="10.0" prefWidth="52.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="353.0" minWidth="10.0" prefWidth="296.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="NEVER" maxWidth="120.0" minWidth="10.0" prefWidth="118.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Label layoutX="285.0" layoutY="142.0" text="رقم الهاتف ثانوى" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <TextField fx:id="part2Phone2" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="103.0" promptText="رقم الهاتف الثانوى" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ImageView fx:id="part2Phone2Error" fitHeight="32.0" fitWidth="32.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="part2Name" alignment="CENTER_RIGHT" layoutX="67.0" layoutY="23.0" promptText="اسم المرافق الثانى" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+                              <Label layoutX="406.0" layoutY="27.0" text="اسم المرافق الثانى" GridPane.columnIndex="2" />
+                              <ImageView fx:id="part2NameError" fitHeight="32.0" fitWidth="32.0" layoutX="28.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="406.0" layoutY="58.0" text="رقم الهاتف الاولى" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <TextField fx:id="part2Phone1" alignment="CENTER_RIGHT" layoutX="67.0" layoutY="54.0" promptText="رقم الهاتف الاولى" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <ImageView fx:id="part2PhoneError" fitHeight="32.0" fitWidth="32.0" layoutX="28.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" prefHeight="41.0" prefWidth="480.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="cancelButton" layoutX="114.0" layoutY="20.0" mnemonicParsing="false" onAction="#OnCancel" prefHeight="38.0" prefWidth="151.0" text="رجوع" />
+                              <Button fx:id="saveButton" mnemonicParsing="false" onAction="#onSave" prefHeight="38.0" prefWidth="151.0" text="حفظ" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="688.0" prefWidth="396.0" HBox.hgrow="NEVER">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <ImageView fx:id="photo" fitHeight="386.0" fitWidth="328.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../icons/boy.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <HBox alignment="CENTER" prefHeight="28.0" prefWidth="420.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <Button fx:id="loadPhoto" mnemonicParsing="false" onAction="#onLoadPhoto" prefHeight="25.0" prefWidth="258.0" text="تحميل صورة" />
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                        <Label alignment="CENTER" prefHeight="29.0" prefWidth="348.0" text="معلومات العيادة">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Separator layoutX="20.0" layoutY="403.0" prefWidth="200.0" />
+                        <Label alignment="CENTER" layoutX="20.0" layoutY="406.0" prefHeight="35.0" prefWidth="357.0" text="اختر نظام دفع او ادخل البيانات يدويا">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="20.0" layoutY="403.0" prefWidth="200.0" />
+                        <HBox alignment="CENTER" spacing="15.0" VBox.vgrow="NEVER">
+                           <children>
+                              <RadioButton fx:id="system1" mnemonicParsing="false" selected="true" text="100">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="paySystem" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="system2" mnemonicParsing="false" text="150" toggleGroup="$paySystem" />
+                              <RadioButton fx:id="system3" mnemonicParsing="false" text="200" toggleGroup="$paySystem" />
+                              <RadioButton fx:id="system4" mnemonicParsing="false" text="250" toggleGroup="$paySystem" />
+                              <RadioButton fx:id="system5" layoutX="223.0" layoutY="20.0" mnemonicParsing="false" text="300" toggleGroup="$paySystem" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                        <GridPane alignment="CENTER" hgap="5.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="202.0" prefWidth="348.0" vgap="10.0" VBox.vgrow="NEVER">
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="45.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="160.0" />
+                              <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="176.0" minWidth="10.0" prefWidth="122.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <TextField fx:id="paidMoney" alignment="CENTER_RIGHT" promptText="الملبغ المدفوع" style="-fx-background-radius: 10;" GridPane.columnIndex="1" />
+                              <Label alignment="CENTER_RIGHT" text="المبلغ المدفوع" GridPane.columnIndex="2" />
+                              <Label alignment="CENTER_RIGHT" layoutX="285.0" layoutY="55.0" text="سعر الجلسة" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER_RIGHT" layoutX="285.0" layoutY="142.0" text="عدد الجلسات السابقة" textAlignment="RIGHT" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <TextField fx:id="oneSessionPrice" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="32.0" promptText="سعر الجلسة الواحدة" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="doneSessions" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="103.0" prefWidth="197.0" promptText="عدد الجلسات السابقة" style="-fx-background-radius: 10;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER_RIGHT" layoutX="272.0" layoutY="131.0" text="عدد الجلسات المتاحه" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="maxSessions" alignment="CENTER" layoutX="218.0" layoutY="171.0" prefHeight="28.0" prefWidth="193.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="paidMoneyError" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="oneSessionPriceError" fitHeight="32.0" fitWidth="32.0" layoutX="26.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="1">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="doneSessionsError" fitHeight="32.0" fitWidth="32.0" layoutX="26.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" visible="false" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../icons/cancel.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </GridPane>
+                        <Region prefHeight="42.0" prefWidth="348.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

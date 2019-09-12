@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="menuVBox" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sub.MenusController">
+   <children>
+      <MenuBar nodeOrientation="RIGHT_TO_LEFT">
+         <menus>
+            <Menu mnemonicParsing="false" text="ملف">
+               <items>
+                  <MenuItem fx:id="undo" mnemonicParsing="false" onAction="#onUndoButton" text="عوده" />
+                  <MenuItem fx:id="redo" mnemonicParsing="false" onAction="#onRedoButton" text="رجوع" />
+                  <MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#onSaveButton" text="حفظ" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="export" mnemonicParsing="false" onAction="#onExport" text="تصدير قاعدة البيانات" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="close" mnemonicParsing="false" onAction="#onClose" text="إغلاق" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="تحرير">
+               <items>
+                  <MenuItem fx:id="addChild" mnemonicParsing="false" onAction="#onAddChildButton" text="اضافة اطفال" />
+                  <MenuItem fx:id="addSession" mnemonicParsing="false" onAction="#onAddSessionButton" text="اضافة جلسات" />
+                  <MenuItem fx:id="addBill" mnemonicParsing="false" onAction="#onAddBillButton" text="اضافة فاتوره" />
+                  <MenuItem fx:id="addPartner" mnemonicParsing="false" onAction="#onAddPartnerButton" text="اضافة مرافق" />
+                  <MenuItem fx:id="addSpecialist" mnemonicParsing="false" onAction="#onAddSpecialistButton" text="اضافة اخصائى/طبيب" />
+                  <MenuItem fx:id="addStatus" mnemonicParsing="false" onAction="#onAddStatusButton" text="اضافة تشخيص" />
+                  <MenuItem fx:id="delStatus" mnemonicParsing="false" onAction="#onDelStatusButton" text="حذف تشخيص" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="مساعدة">
+               <items>
+                  <MenuItem fx:id="about" mnemonicParsing="false" onAction="#onAbout" text="عن البرنامج" />
+                  <MenuItem fx:id="properties" mnemonicParsing="false" onAction="#onProperties" text="خيارات" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="68.0" prefWidth="1102.0" VBox.vgrow="NEVER">
+         <items>
+            <Button fx:id="addButton" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onAddButton" prefHeight="50.0" prefWidth="120.0" text="اضافة">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="قائمة الاضافة العامة" />
+               </tooltip>
+            </Button>
+            <Button fx:id="editButton" contentDisplay="RIGHT" layoutX="114.0" layoutY="6.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onEditButton" prefHeight="50.0" prefWidth="120.0" text="تحرير">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="تحرير معلومات طفل او مرافق او اخصائى" />
+               </tooltip>
+            </Button>
+            <Button fx:id="delButton" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onDelButton" prefHeight="50.0" prefWidth="120.0" text="حذف">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="حذف من البرنامج" />
+               </tooltip>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="32.0" prefWidth="5.0">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Separator>
+            <Button fx:id="addChildButton" contentDisplay="RIGHT" layoutX="514.0" layoutY="5.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onAddChildButton" prefHeight="50.0" prefWidth="120.0" text="طفل">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="اضافة طفل" />
+               </tooltip>
+            </Button>
+            <Button fx:id="addPartnerButton" contentDisplay="RIGHT" layoutX="682.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onAddPartnerButton" prefHeight="50.0" prefWidth="120.0" text="مرافق">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="اضافة مرافق" />
+               </tooltip>
+            </Button>
+            <Button fx:id="addSessionButton" contentDisplay="RIGHT" layoutX="514.0" layoutY="5.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onAddSessionButton" prefHeight="50.0" prefWidth="120.0" text="جلسة">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="اضافة جلسة لطفل " />
+               </tooltip>
+            </Button>
+            <Button fx:id="addBillButton" contentDisplay="RIGHT" layoutX="524.0" layoutY="15.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onAddBillButton" prefHeight="50.0" prefWidth="120.0" text="دفع">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="اضافة دفع لطفل" />
+               </tooltip>
+            </Button>
+            <Button fx:id="addSpecialistButton" contentDisplay="RIGHT" graphicTextGap="5.0" layoutX="766.0" layoutY="5.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#onAddSpecialistButton" prefHeight="50.0" prefWidth="120.0" text="اخصائى/طبيب" textAlignment="RIGHT">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="اضافة طبيب او اخصائى" />
+               </tooltip>
+            </Button>
+         </items>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </ToolBar>
+   </children>
+</VBox>

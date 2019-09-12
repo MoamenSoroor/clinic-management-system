@@ -1,0 +1,59 @@
+package application.sub;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import application.database.BillDatabase;
+import application.database.ChildDatabase;
+import application.model.Bill;
+import application.model.Child;
+import javafx.event.ActionEvent;
+import javafx.scene.control.TextArea;
+import javafx.stage.Stage;
+
+public class ViewBillController {
+	String infor = "";
+	Bill bill = null;
+	@FXML
+	private TextArea billInfor;
+	@FXML
+	private Button cancelButton;
+	// Event Listener on Button[#cancelButton].onAction
+	@FXML
+	public void onCancel(ActionEvent event) {
+		Stage stage = (Stage) cancelButton.getScene().getWindow();
+		stage.close();
+	}
+	@FXML 
+	private void initialize()
+	{
+		billInfor.setEditable(false);
+	}
+	public void loadBillInfor(int id)
+	{
+		bill = BillDatabase.selectBill(id);
+		Child ch = ChildDatabase.selectChild(bill.getChild().getId());
+			infor = "„⁄·Ê„«  «·›« Ê—… «·«”«”Ì… :\n"
+					+ "==================================\n"
+					+ "«”„ «·ÿ›· : " + bill.getChild().getName()
+					+ "\n«”„ «·„—«›ﬁ: " + bill.getPartName()
+					+ "\nÌÊ„ «·œ›⁄: " + bill.getDay()
+					+ "\n «—ÌŒ «·œ›⁄: " + bill.getPayDateString()
+					+ "\n «—ÌŒ «·«‰ Â«¡: " + bill.getExpiredDateString()
+					+ "\n«·„œ…: " + bill.getDuration()
+
+					+ "\n\n„⁄·Ê„«  «·›« Ê—… «·„«·Ì… :\n"
+					+ "==================================\n"
+					+ "\n«·„»·€ «·„œ›Ê⁄: " + bill.getNewPayment()
+					+ "\n«·„»·€ «·»«ﬁÏ ”«»ﬁ«: " + bill.getOldRestMoney()
+					+ "\n«·„»·€ «·ﬂ·Ï «·ÃœÌœ: " + (bill.getOldRestMoney() + bill.getNewPayment())
+					+ "\n⁄œœ «·Ã·”«  «·»«ﬁÌ…: " + (bill.getChild().getRestSessions())
+					+ "\n⁄œœ «·Ã·”«  «·ÃœÌœ: " + ((bill.getOldRestMoney() + bill.getNewPayment())/bill.getOldOneSessionPrice())
+					+ "\n\n«·„»·€ «·ﬂ·Ï Õ«·Ì«: " + ch.getPaidUpMoney()
+					+ "\n«·„»·€ «·»«ﬁÏ Õ«·Ì«: " + ch.getRestMoney()
+					+ "\n⁄œœ «·Ã·”«  Õ«·Ì«: " + ch.getNumberOfSessions()
+					+ "\n⁄œœ «·Ã·”«  «·»«ﬁÌÂ Õ«·Ì«: " + ch.getRestSessions()
+					+ "\n==================================\n";
+					
+			billInfor.setText(infor);
+	}
+}

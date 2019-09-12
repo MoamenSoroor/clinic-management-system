@@ -1,0 +1,14 @@
+.button{
+	-fx-background-color:  #2196F3;
+	-fx-background-radius: 0;
+	-fx-border-radius:0.0;
+	}
+.button hover {
+	-fx-background-color:  #4CAF50;
+	-fx-background-radius: 0;
+	-fx-border-radius:0.0; 
+}
+.copyable-label, .copyable-label:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px ;
+}

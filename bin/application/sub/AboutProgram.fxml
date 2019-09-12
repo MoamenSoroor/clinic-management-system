@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="515.0" style="-fx-background-color: #A1887F;" stylesheets="@button.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sub.AboutProgramController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="32.0" layoutY="40.0" prefHeight="304.0" prefWidth="455.0" spacing="10.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="199.0" prefWidth="452.0" spacing="10.0" style="-fx-background-radius: 30; -fx-background-color: CFD8DC;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="403.0" text="برنامج ادارة عيادة أطفال" textAlignment="CENTER">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="403.0" text="اعداد: مؤمن محمد جمال سرور">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="emailLink" alignment="CENTER" onAction="#onEmailClicked" prefHeight="23.0" prefWidth="456.0" text="https://www.facebook.com/moamen.soroor?ref=bookmarks" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Hyperlink>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <TextField alignment="CENTER" editable="false" styleClass="copyable-label" stylesheets="@../application.css" text=" 01027931755">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </TextField>
+                        <Label text="تليفون/">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <TextField alignment="CENTER" editable="false" prefHeight="45.0" prefWidth="301.0" styleClass="copyable-label" stylesheets="@../application.css" text="moamensoroor@gmail.com">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </TextField>
+                        <Label text="ايميل/">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <Button fx:id="backbutton" mnemonicParsing="false" onAction="#onBack" prefHeight="36.0" prefWidth="125.0" text="رجوع" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

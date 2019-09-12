@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="PartnerTableAnchor" nodeOrientation="RIGHT_TO_LEFT" prefHeight="431.0" prefWidth="954.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sub.TablePartnerController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox maxHeight="35.0" prefHeight="35.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="NEVER">
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="102.0" text="مرافق" HBox.hgrow="NEVER" />
+                  <TextField fx:id="searchPartnerName" prefHeight="25.0" prefWidth="351.0" promptText="ابحث باسم المرافق" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="clearButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onClearButton" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/eraser.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Region layoutX="273.0" layoutY="20.0" prefHeight="25.0" prefWidth="417.0" />
+               </children>
+            </HBox>
+            <TableView fx:id="tablePartner" fixedCellSize="30.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="437.0" prefWidth="954.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colId" editable="false" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="م." />
+                  <TableColumn fx:id="colName" editable="false" prefWidth="180.0" text="الاسم" />
+                  <TableColumn fx:id="colGroundPhone" editable="false" prefWidth="150.0" text="رقم هاتف الارضى" />
+                  <TableColumn fx:id="colPhone1" editable="false" prefWidth="150.0" text="رقم هاتف 1" />
+                  <TableColumn fx:id="colPhone2" editable="false" prefWidth="150.0" text="رقم هاتف 2" />
+                  <TableColumn fx:id="colAddress" editable="false" minWidth="150.0" prefWidth="200.0" text="العنوان" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

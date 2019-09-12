@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="billTableAnchor" nodeOrientation="RIGHT_TO_LEFT" prefHeight="431.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sub.TableBillController">
+   <children>
+      <VBox prefHeight="471.0" prefWidth="1275.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox maxHeight="35.0" prefHeight="35.0" prefWidth="200.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label text="طفل" HBox.hgrow="NEVER" />
+                  <TextField fx:id="searchChildName" promptText="ابحث باسم الطفل" HBox.hgrow="ALWAYS" />
+                  <Region prefHeight="25.0" prefWidth="20.0" />
+                  <Label text="مرافق" HBox.hgrow="NEVER" />
+                  <TextField fx:id="searchPartnerName" promptText="ابحث باسم المرافق" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="clearButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#onClearButton" text="Button">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/eraser.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="TableBill" fixedCellSize="30.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="431.0" prefWidth="866.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+               <columns>
+                  <TableColumn fx:id="colId" prefWidth="50.0" text="م." />
+                  <TableColumn fx:id="colChildName" prefWidth="180.0" text="اسم الحالة" />
+                  <TableColumn fx:id="colPayDay" text="يوم الدفع" />
+                  <TableColumn fx:id="colPayDate" prefWidth="85.0" text="تاريخ الدفع" />
+                  <TableColumn fx:id="colPartnerName" prefWidth="140.0" text="اسم المرافق" />
+                  <TableColumn fx:id="colPayment" text="المبلغ المدفوع" />
+                  <TableColumn fx:id="colOneSessionPrice" text="سعر الجلسة" />
+                  <TableColumn fx:id="colRestMoney" prefWidth="100.0" text="المبلغ الباقى سابقا" />
+                  <TableColumn fx:id="colAllMoney" text="المبلغ الكلى" />
+                  <TableColumn fx:id="colNewMaxSession" prefWidth="115.0" text="عدد جلسات جديد" />
+               </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

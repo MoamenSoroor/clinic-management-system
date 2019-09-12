@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="addButtons" alignment="TOP_CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="362.0" prefWidth="433.0" style="-fx-border-color: #000000; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sub.ButtonAddController">
+   <children>
+      <Label alignment="CENTER" prefHeight="17.0" prefWidth="456.0" text="اختر من القائمة" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="addChildButton" onAction="#onAddChild" prefHeight="62.0" prefWidth="564.0" stylesheets="@button.css" text="اضافة طفل" />
+      <JFXButton fx:id="addSessionButton" layoutX="10.0" layoutY="10.0" onAction="#onAddSession" prefHeight="62.0" prefWidth="622.0" stylesheets="@button.css" text="اضافة جلسة" />
+      <JFXButton fx:id="addBillButton" layoutX="10.0" layoutY="72.0" onAction="#onAddBill" prefHeight="62.0" prefWidth="537.0" stylesheets="@button.css" text="اضافة فاتورة" />
+      <JFXButton fx:id="addSpecialistButton" layoutX="10.0" layoutY="134.0" onAction="#onAddSpecialist" prefHeight="62.0" prefWidth="495.0" stylesheets="@button.css" text="اضافة اخصائى / طبيب" />
+      <JFXButton fx:id="addPartnerButton" layoutX="10.0" layoutY="163.0" onAction="#onAddPartner" prefHeight="62.0" prefWidth="523.0" stylesheets="@button.css" text="اضافة مرافق طفل" />
+      <JFXButton fx:id="addStatusButton" layoutX="54.0" layoutY="254.0" onAction="#onAddStatus" prefHeight="62.0" prefWidth="572.0" stylesheets="@button.css" text="اضافة تشخيص" />
+      <JFXButton fx:id="exitButton" layoutX="20.0" layoutY="305.0" onAction="#onExitButton" prefHeight="62.0" prefWidth="572.0" stylesheets="@button.css" text="رجوع" />
+   </children>
+</VBox>

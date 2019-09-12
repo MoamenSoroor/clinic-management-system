@@ -1,0 +1,23 @@
+.jfx-button{
+	-fx-background-color: #B0BEC5;
+	-fx-text-fill: black ;
+	-fx-font-size: 18pt;
+	-fx-border-color: #212121;
+	-fx-font-family: Segoe UI; 
+
+}
+.jfx-button:hover {
+	-fx-background-color: whitesmoke;
+}
+.vbox{
+	-fx-border-color: #4E342E;
+	-fx-border-width: 10pt;
+}
+.list-cell {
+	-fx-font-size: 11pt ;
+	-fx-alignment: center-right;
+}
+	
+.button{
+	-fx-border-radius: 5pt ;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox id="splashLayout" alignment="BOTTOM_CENTER" prefHeight="546.0" prefWidth="660.0" spacing="5.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.splash.SplashController">
+   <children>
+      <ImageView fx:id="myImage" fitHeight="536.0" fitWidth="638.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@smile.jpg" />
+         </image>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets bottom="10.0" />
+   </padding>
+</VBox>
